@@ -309,6 +309,12 @@
         width: 170px;
         font-size: 1.2em;
     }
+
+    button{
+        bottom: 500px; left: 500px;
+        animation: pulse 1s infinite alternate;
+        border: none;
+    }
 </style>
 
 <body>
@@ -344,7 +350,7 @@
     </form>
     </div>
 
-    <button onclick= "Unlock"
+    <button id="Button" disabled  onclick= "location.href = 'UnlockedScreen.html'">Press Me!!</button>
 
     <input type="text" class="input-1" placeholder="ucf@better.edu">
     <input type="text" class="input-2" placeholder="ucf@better.edu">
@@ -381,6 +387,19 @@
 
 
 </body>
+
+<script>
+    const input = document.getElementsByClassName('input-23');
+    const button = document.getElementById('Button');
+
+    input.addEventListener('input', function() {
+        if (input.value !== 'hack@usf.edu') {
+            button.disabled = false; // Enable the button
+        } else {
+            button.disabled = true; // Disable the button
+        }
+    })
+</script>
 
 
 </html>
